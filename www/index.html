@@ -13,10 +13,7 @@
     // Cordova is ready
     //
     function onDeviceReady() {
-         var ref = window.open('http://apache.org');
-         ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
-         ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
-         ref.addEventListener('exit', function() { alert(event.type); });
+         window.plugins.childBrowser.showWebPage('http://www.google.com', { showLocationBar: true });
     }
 
     </script>
