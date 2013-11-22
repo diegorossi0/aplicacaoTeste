@@ -15,7 +15,6 @@
 
     <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
     <gap:plugin name="com.phonegap.plugins.childbrowser"/>
-	<gap:plugin name="org.apache.cordova.inappbrowser" />
 
 
     <feature name="http://api.phonegap.com/1.0/device" />
