@@ -3,17 +3,21 @@
   <head>
     <title>InAppBrowser.addEventListener Example</title>
 
-    <script type="text/javascript" charset="utf-8" src="cordova-2.3.0.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
-    // Wait for Cordova to load
+    // Wait for device API libraries to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
 
-    // Cordova is ready
+    // device APIs are available
     //
     function onDeviceReady() {
-         window.plugins.childBrowser.showWebPage('http://www.google.com', { showLocationBar: true });
+         var ref = window.open('http://apache.org', '_blank', 'location=yes');
+         ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
+         ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
+         ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
+         ref.addEventListener('exit', function(event) { alert(event.type); });
     }
 
     </script>
